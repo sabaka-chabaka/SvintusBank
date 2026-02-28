@@ -1,5 +1,6 @@
 package com.sabakachabaka.svintusbank;
 
+import com.sabakachabaka.svintusbank.blocks.ModBlocks;
 import com.sabakachabaka.svintusbank.items.ModItems;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
@@ -17,6 +18,9 @@ public class SvintusBank
 
     public SvintusBank() {
         IEventBus eventBus = FMLJavaModLoadingContext.get().getModEventBus();
+
+        ModItems.ITEMS.register(eventBus);
+        ModBlocks.BLOCKS.register(eventBus);
 
         eventBus.addListener(this::setup);
 
