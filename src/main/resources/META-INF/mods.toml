@@ -1,0 +1,25 @@
+# This is an example mods.toml file. It contains the data relating to the loading mods.
+
+modLoader="javafml"
+loaderVersion="[36,)"
+license="MIT"
+[[mods]]
+modId="svintusbank"
+version="${file.jarVersion}"
+displayName="Svintus Bank"
+logoFile="svintusbank.png"
+credits="intellij idea"
+authors="sabaka-chabaka"
+description='''Svintus is oind'''
+[[dependencies.svintusbank]]
+    modId="forge"
+    mandatory=true
+    versionRange="[36,)"
+    ordering="NONE"
+    side="BOTH"
+[[dependencies.svintusbank]]
+    modId="minecraft"
+    mandatory=true
+    versionRange="[1.16.5,1.17)"
+    ordering="NONE"
+    side="BOTH"
