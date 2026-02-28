@@ -1,4 +1,10 @@
 {
-  "item.svintusbank.bank_card": "Банковская карта СвинтусБанка",
-  "itemGroup.svintusbank": "СвинтусБанк"
+  "itemGroup.svintusbank": "СвинтусБанк",
+  "item.svintusbank.bill_50": "50 свинтусов",
+  "item.svintusbank.bill_100": "100 свинтусов",
+  "item.svintusbank.bill_500": "500 свинтусов",
+  "item.svintusbank.bill_1000": "1000 свинтусов",
+  "item.svintusbank.bill_5000": "5000 свинтусов",
+  "item.svintusbank.bank_card": "Банковская карта Свинтус-Банка",
+  "block.svintusbank.atm": "Банкомат Свинтус-Банка"
 }
