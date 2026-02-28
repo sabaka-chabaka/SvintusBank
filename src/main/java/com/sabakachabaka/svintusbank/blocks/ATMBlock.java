@@ -15,7 +15,7 @@ import net.minecraft.util.math.BlockRayTraceResult;
 import net.minecraft.util.text.StringTextComponent;
 import net.minecraft.world.World;
 
-import static com.sabakachabaka.svintusbank.items.ModItems.BILL_50;
+import static com.sabakachabaka.svintusbank.items.ModItems.*;
 
 public class ATMBlock extends Block {
     public ATMBlock() {
@@ -32,9 +32,38 @@ public class ATMBlock extends Block {
         if (mainHand.getItem() instanceof BankCardItem && offHand.isEmpty()) {
             double balance = BankCardItem.getBalance(mainHand);
             if (balance >= 50) {
-                BankCardItem.setBalance(mainHand, balance - 50);
-                player.addItem(new ItemStack(BILL_50.get()));
-                player.displayClientMessage(new StringTextComponent("§6ATM: §fСнято 50 свинтусов"), true);
+                if (balance >= 100) {
+                    if (balance >= 500) {
+                        if (balance >= 1000) {
+                            if (balance >= 5000) {
+                                BankCardItem.setBalance(mainHand, balance - 5000);
+                                player.addItem(new ItemStack(BILL_5000.get()));
+                                player.displayClientMessage(new StringTextComponent("§6ATM: §fСнято 5000 свинтусов"), true);
+                            }
+                            else {
+                                BankCardItem.setBalance(mainHand, balance - 1000);
+                                player.addItem(new ItemStack(BILL_1000.get()));
+                                player.displayClientMessage(new StringTextComponent("§6ATM: §fСнято 1000 свинтусов"), true);
+                            }
+                        }
+                        else {
+                            BankCardItem.setBalance(mainHand, balance - 500);
+                            player.addItem(new ItemStack(BILL_500.get()));
+                            player.displayClientMessage(new StringTextComponent("§6ATM: §fСнято 500 свинтусов"), true);
+                        }
+                    }
+                    else {
+                        BankCardItem.setBalance(mainHand, balance - 50);
+                        player.addItem(new ItemStack(BILL_100.get()));
+                        player.displayClientMessage(new StringTextComponent("§6ATM: §fСнято 50 свинтусов"), true);
+                    }
+                }
+                else {
+                    BankCardItem.setBalance(mainHand, balance - 50);
+                    player.addItem(new ItemStack(BILL_50.get()));
+                    player.displayClientMessage(new StringTextComponent("§6ATM: §fСнято 50 свинтусов"), true);
+                }
+
             } else {
                 player.displayClientMessage(new StringTextComponent("§cНедостаточно средств (минимум 50)"), true);
             }
